@@ -1,8 +1,6 @@
 #include <stdio.h>
-#include <string.h>
 
 // Sliding window approach (can also use set)
-
 int lengthOfLongestSubstring(char* s) {
     // ASCII conversion (it may be 256)
     int charMap[128] = {0}; // Hashmap simulation
@@ -15,8 +13,8 @@ int lengthOfLongestSubstring(char* s) {
         
         // Update window if found the same character
         while (charMap[currChar] > 1) {
-            char caracter_izquierdo = s[left];
-            charMap[caracter_izquierdo]--; 
+            char leftChar = s[left];
+            charMap[leftChar]--; 
             left++;
         }
         
