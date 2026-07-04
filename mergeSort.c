@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stdbool.h>
 // Challenge 1: Hacer un Merge Sort
 /*
  * MergeSort es dividir un arreglo en 2 mitades de forma repetida hasta que solo queden numeros individuales
@@ -69,6 +69,19 @@ void merge(int *arr, int left, int mid, int right) {
 
 }
 
+
+// A test
+
+bool sortTest(int *arr, int len) {
+    for (size_t i = 0; i < len-1; i++) {
+        if (arr[i] > arr[i+1]) {
+            puts("The array is not sorted!");
+            return false;
+        }
+    }
+    puts("The array is sorted!");
+    return true;
+}
 void mergeSort(int *arr, int left, int right) {
     if (left >= right) {
         return;
@@ -90,7 +103,6 @@ int main (int argv, char *argc[argv + 1]) {
     for (int i = 0; i < len; i++) {
         printf("Element %d:%d\n", i, arr[i]);
     }
+
+    sortTest(arr, len);
 }
-
-
-
