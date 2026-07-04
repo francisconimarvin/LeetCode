@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 int partition(int *arr, int low, int high) {
     int pivot = arr[high];
@@ -30,6 +31,17 @@ void quickSort(int *arr, int low, int high) {
     quickSort(arr, pivot+1, high);
 }
 
+bool sortTest(int *arr, int len) {
+    for (size_t i = 0; i < len-1; i++) {
+        if (arr[i] > arr[i+1]) {
+            puts("The array is not sorted!");
+            return false;
+        }
+    }
+    puts("The array is sorted!");
+    return true;
+}
+
 int main (int argv, char *argc[argv+1]) {
     int arr[7] = {10, 6, 3, 4, 9, 10, 7};
     int len = 7;
@@ -38,5 +50,7 @@ int main (int argv, char *argc[argv+1]) {
     for (int i = 0; i < len; i++) {
         printf("Element %d:%d\n", i, arr[i]);
     }
-}
     
+   sortTest(arr, len-1);
+}
+ 
