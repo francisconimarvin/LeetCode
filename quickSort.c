@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+/* Ordenamiento utilizando pivotes y Two Pointers */
 int partition(int *arr, int low, int high) {
     int pivot = arr[high];
 
